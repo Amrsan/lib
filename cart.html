@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart</title>
+  <style>
+    body { font-family: Arial; background-color: #f0f0f0; padding: 20px; }
+    table { width: 100%; background: white; border-collapse: collapse; }
+    th, td { padding: 15px; border: 1px solid #ddd; text-align: center;}
+    th { background-color: #4CAF50; color: white; }
+    .checkout-btn { margin-top: 20px; padding: 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; }
+    .remove-btn { padding: 10px; background-color: #f44336; color: white; border: none; cursor: pointer; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h2>Your Cart</h2>
+  <table>
+    <tr>
+      <th>Book Cover</th>
+      <th>Book</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+    <tr id="book-cart">
+      <td><img id="book-cover" src="" alt="Book Cover" style="width: 100px; height: 150px;"/></td>
+      <td id="book-title"></td>
+      <td id="book-price"></td>
+      <td><button class="remove-btn">Remove</button></td>
+    </tr>
+  </table>
+  <button class="checkout-btn">Proceed to Checkout</button>
+
+  <script>
+    window.onload = function () {
+      // Get the stored book title
+      const bookImg = localStorage.getItem('selectedBookImg');
+      const bookTitle = localStorage.getItem('selectedBookTitle');
+      const bookAuthor = localStorage.getItem('selectedBookAuthor');
+      const bookPrice = localStorage.getItem('selectedBookPrice');
+      const bookDescription = localStorage.getItem('selectedBookDescription');
+
+      // Display the title in the details page
+      if (bookTitle) {
+        document.getElementById('book-title').textContent = bookTitle;
+      }
+     
+      if (bookPrice) {
+        document.getElementById('book-price').textContent = bookPrice;
+      }
+      if (bookImg) {
+        document.getElementById('book-cover').src = bookImg;
+      }
+      // Clear the stored book title
+
+    }
+    document.querySelector('.remove-btn').addEventListener('click', function() {
+      // localStorage.removeItem('selectedBookTitle');
+      // localStorage.removeItem('selectedBookImg');
+      // localStorage.removeItem('selectedBookAuthor');
+      // localStorage.removeItem('selectedBookPrice');
+      // localStorage.removeItem('selectedBookDescription');
+      const row = this.closest('tr');
+      row.parentNode.removeChild(row);
+      
+    });
+
+    document.querySelector('.checkout-btn').addEventListener('click', function() {
+      // Redirect to checkout page
+      if (document.getElementById("book-cart") === null) {
+        alert('Your cart is empty. Please add a book to your cart before proceeding to checkout.');
+        return window.location.href = 'home.html';
+        
+      }else {
+        window.location.href = 'checkout.html';
+      }
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            /* outline: 2px solid red; */
+        }
+        body {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(
+              #9ee6a0  , #1e5631 
+        ) ;
+     
+        }
+
+        .about-hero {
+           
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            cursor: text;
+            font-size: 88px;
+            margin-bottom: 155px;
+            text-shadow: 1px 17px 20px rgba(0,0,0,0.6);
+        }
+        main{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 350px;
+            height: 500px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 50px black;
+            /* padding: 10px; */
+            overflow: hidden;
+        }
+
+        .Signup{
+            background-color: #1e5631;
+            width: 100%;
+            height: 100%;
+            /* transition: transform s; */
+        }
+        /* .Signup h1:hover{
+            transform: scale(0.5);
+            transition: transform 1s;
+            
+        } */
+        form{
+            text-align: center;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            padding-top: 20px;
+            /* margin: 15px; */
+            cursor: pointer;
+        }
+        input{
+            width: 60%;
+            padding: 10px;
+            /* height: 40px; */
+            margin: 20px auto;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+        }
+        button{
+            width: 60%;
+            height: 40px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            margin: 10px auto;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+        }
+        button:hover{
+            transform: scale(1.02);
+        }
+
+        .login{
+            height: 480px;
+            background-color: #eee;
+            transform: translateY(-70px);
+            border-radius: 250px / 45px;
+            transition: transform 1s;
+        }
+        .login h1{
+            color: #1e5631;
+            padding-top:20px ;
+        }
+        .login:hover{
+            transform: translateY(-450px);
+        }
+        .password , .password1{
+            /* display: none; */
+            -webkit-text-security: disc;
+            /* -webkit-text-security: none; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section>
+           
+        </section>
+        <section class="Signup">
+            <form action="">
+
+                <h1>Sign Up</h1>
+                <input required placeholder="User name" type="text" class="username">
+                <input required placeholder="Email" type="text" class="email">
+                <input required placeholder="Password" type="text" class="password" >
+                <button type="submit" id="signup" class="signupbtn">Sign Up</button>
+               
+            </form>
+        </section>
+        <section class="login">
+            <form action="">
+                <h1>Login</h1>
+                <input required placeholder="User name" type="text" class="username1">
+                <!-- <input required placeholder="Email" type="text"> -->
+                <input required placeholder="Password" type="text" class="password1" inputmode="hidden">
+                <button type="submit" id="login">Login</button>
+
+            </form>
+        </section>
+    </main>
+
+     <script type="text/javascript">
+                    const username = document.getElementsByClassName("username")[0];
+                    const email = document.getElementsByClassName("email")[0];
+                    const password = document.getElementsByClassName("password")[0];
+                    document.getElementById("signup").onclick = function () {
+                        if (username.value === "" ) {
+                            alert("Please enter the details");
+                            username.focus();
+                            return false;
+                        }if ( email.value === "") {
+                            alert("Please enter your email");
+                            email.focus();
+                            return false;
+                        } 
+                         if (password.value === "") {
+                            alert("Please enter your password");
+                            password.focus();
+                            return false;
+                        } 
+                            alert("Welcome " + username.value);
+                            
+                            location.href = "home.html";
+                            return false;
+                        
+                       
+                    }
+                    const username1 = document.getElementsByClassName("username1")[0];
+                    const password1 = document.getElementsByClassName("password1")[0];
+                    document.getElementById("login").onclick = function () {
+                        if (username1.value === "" ) {
+                            alert("Please enter the username");
+                            username1.focus();
+                            return false;
+                        }
+                         if (password1.value === "") {
+                            alert("Please enter your password");
+                            password1.focus();
+                            return false;
+                        } 
+                            alert("Welcome " + username1.value);
+                            
+                            location.href = "home.html";
+                            return false;
+                    }
+
+                </script>
+</body>
+
+</html>

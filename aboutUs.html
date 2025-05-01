@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>مكتبة عبودي - من نحن</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Reusing your existing header and footer styles */
+        header {
+            background-color: #1e5631;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #9ee6a0;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        /* About Us specific styles */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("Images/history.png") center/cover;
+                background-attachment:fixed;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .history-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .history-text {
+            text-align: right;
+        }
+
+        .history-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .values-section {
+            background-color: #f0f7f2;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card i {
+            font-size: 40px;
+            color: #1e5631;
+            margin-bottom: 20px;
+        }
+
+        .team-section {
+            text-align: center;
+            margin: 60px auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        /* Reusing your existing footer styles */
+        .footer {
+            background-color: #1e5631;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #d9d9d9;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .history-section {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+          <div class="logo">مكتبة العبودي</div>
+          <nav class="nav-menu">
+            <a href="home.html">الرئيسية</a>
+            <a href="books.html">الكتب</a>
+            <!-- <a href="books.html">التصنيفات</a> -->
+            <a href="aboutUs.html">من نحن</a>
+            <!-- <a href="login.html">تسجيل الدخول</a> -->
+            <a href="cart.html">سلة التسوق</a>
+          </nav>
+        </div>
+      </header>
+
+    <div class="about-hero">
+        <h1>مكتبة العبودي - قصتنا</h1>
+    </div>
+
+    <div class="about-content">
+        <div class="history-section">
+            <div class="history-text">
+                <h2>تاريخنا</h2>
+                <p>تأسست مكتبة عبودي في عام 1909، وقد بدأت كمتجر صغير في قلب المدينة. على مر السنين، نمت المكتبة لتصبح
+                    واحدة من أكبر وأهم المكتبات في المنطقة.</p>
+                <p>نحن فخورون بتراثنا الغني وتاريخنا الطويل في خدمة مجتمع القراء والباحثين. لقد شهدنا تطور صناعة النشر
+                    من الكتب المطبوعة التقليدية إلى العصر الرقمي الحديث.</p>
+            </div>
+            <div class="history-image">
+                <img href="images/slides/bnr.jpg" src="Images/Screenshot 2025-04-29 040343.png"
+                    alt="صورة المكتبة القديمة">
+            </div>
+        </div>
+
+        <div class="values-section">
+            <h2 style="text-align: center; margin-bottom: 40px;">قيمنا</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>نشر المعرفة</h3>
+                    <p>نؤمن بأن المعرفة حق للجميع، ونسعى لجعلها متاحة للجميع</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>خدمة العملاء</h3>
+                    <p>نضع رضا عملائنا في مقدمة أولوياتنا ونقدم لهم أفضل تجربة ممكنة</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>التنوع الثقافي</h3>
+                    <p>نحتفي بالتنوع الثقافي من خلال توفير كتب بلغات متعددة</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="team-section">
+            <h2>فريقنا</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="Images/team-member-1.jpg" alt="عضو الفريق">
+                    <h3>أحمد محمد</h3>
+                    <p>المدير التنفيذي</p>
+                </div>
+                <div class="team-member">
+                    <img src="Images/team-member-2.jpg" alt="عضو الفريق">
+                    <h3>سارة أحمد</h3>
+                    <p>مديرة المبيعات</p>
+                </div>
+                <div class="team-member">
+                    <img src="Images/team-member-3.jpg" alt="عضو الفريق">
+                    <h3>محمد علي</h3>
+                    <p>مدير المشتريات</p>
+                </div>
+                <div class="team-member">
+                    <img src="Images/team-member-4.jpg" alt="عضو الفريق">
+                    <h3>نور حسن</h3>
+                    <p>مديرة خدمة العملاء</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <h3>مكتبة عبودي</h3>
+                <p>مصدرك الموثوق للكتب ذات الجودة منذ عام 1909.</p>
+            </div>
+
+            <div>
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="home.html">الرئيسية</a></li>
+                    <li><a href="books.html">الكتب</a></li>
+                    <li><a href="book-details.html">الإصدارات الجديدة</a></li>
+                    <li><a href="book-details.html">الأكثر مبيعاً</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>خدمة العملاء</h3>
+                <ul>
+                    <li><a href="aboutUs.html">اتصل بنا</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="policy.html">سياسة الشحن</a></li>
+                    <li><a href="returns.html">الإرجاع والاسترداد</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>معلومات الاتصال</h3>
+                <ul>
+                    <li>البريد الإلكتروني: info@aboudibookstore.com</li>
+                    <li>الهاتف: ٧٨٩٠-٤٥٦-١٢٣(٢٠+)</li>
+                    <li>واتساب: ٧٨٩٠-٤٥٦-١٢٣(٢٠+)</li>
+                    <li>العنوان: 123 شارع الكتب، مدينة القراءة</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © 2025 مكتبة عبودي. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+</body>
+
+</html>
